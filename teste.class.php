@@ -43,40 +43,76 @@
                 </div>
                 <div class="row">
                     <div class="col boxDados">
-                        <div class="p-3 mb-2 bg-primary text-white dados">
-                            <?php
-
-                                require_once("pessoa.class.php");
-
-                                class Teste{
-                                    private $pessoa;
-
-                                    public function __construct(){
-                                        $pessoa = new Pessoa();
-                                        
-                                        $pessoa->setNome($_POST['nome']);
-                                        echo "<Strong>Nome:</Strong> " . $pessoa->getNome();
-                                        echo "⠀⠀⠀⠀";
-                                        $pessoa->setTelefone($_POST['telefone']);
-                                        echo "<Strong>Telefone:</Strong> " . $pessoa->getTelefone();
-                                        echo "⠀⠀⠀⠀";
-                                        $pessoa->setOrigem($_POST['origem']);
-                                        echo "<Strong>Origem:</Strong> " . $pessoa->getOrigem();
-                                        echo "⠀⠀⠀⠀";
-                                        $pessoa->setData($_POST['date']);
-                                        echo "<Strong>Data:</Strong> " . $pessoa->getData();
-                                        echo "⠀⠀⠀⠀";
-                                        $pessoa->setObservacao($_POST['obs']);
-                                        echo "<Strong>Observação:</Strong> " .  $pessoa->getObservacao();
-                                    }
-                                }new Teste();
-
-                            ?>
+                        <div class="table-responsive">
+                            <table class="table table-borderless" id="tabela">
+                                <thead>
+                                    <tr class="headerTable">
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Telefone</th>
+                                        <th scope="col">Origem</th>
+                                        <th scope="col">Contato</th>
+                                        <th scope="col">Observação</th>
+                                        <th scope="col">Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <?php
+                                                require_once("pessoa.class.php");
+                                                $pessoa = new Pessoa();
+                                                $pessoa->setNome($_POST['nome']);
+                                                echo $pessoa->getNome(); 
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                require_once("pessoa.class.php");
+                                                $pessoa = new Pessoa();
+                                                $pessoa->setTelefone($_POST['telefone']);
+                                                echo $pessoa->getTelefone(); 
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                require_once("pessoa.class.php");
+                                                $pessoa = new Pessoa();
+                                                $pessoa->setOrigem($_POST['origem']);
+                                                echo $pessoa->getOrigem(); 
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                require_once("pessoa.class.php");
+                                                $pessoa = new Pessoa();
+                                                $pessoa->setData($_POST['date']);
+                                                echo $pessoa->getData(); 
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                require_once("pessoa.class.php");
+                                                $pessoa = new Pessoa();
+                                                $pessoa->setObservacao($_POST['obs']);
+                                                echo $pessoa->getObservacao(); 
+                                            ?>
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p></p>
                     </div>
                 </div>
             </div>
         </main>
     </body>
-
+</html
         
